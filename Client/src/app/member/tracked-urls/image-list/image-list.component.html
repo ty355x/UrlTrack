@@ -1,0 +1,30 @@
+<div class="toolbar">
+    <button (click)="back()" [disabled]="isLoading">
+        <mat-icon class="icon">arrow_back</mat-icon>Back
+    </button>
+</div>
+
+<h1>Tracked URL Images</h1>
+<a class="image-url" *ngIf="!isLoading && url !== null" (click)="openUrl(url)">
+    {{ url }}
+</a>
+
+<app-loading [show]="isLoading"></app-loading>
+
+<div *ngIf="!isLoading && imageGroups !== null">
+    <div *ngFor="let group of imageGroups" class="image-group">
+        <h2>{{ group.date }}</h2>
+
+        <div *ngFor="let entry of group.images" class="image-tile" (click)="viewImage(entry.image)">
+            <div class="image-wrapper">
+                <img [src]="entry.image.image_url_tn">
+            </div>
+            <div class="image-time">{{ entry.time }}</div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+
+<div *ngIf="!isLoading && imageGroups === null || imageGroups?.length === 0" class="no-images">
+    No images found for the specified URL
+</div>

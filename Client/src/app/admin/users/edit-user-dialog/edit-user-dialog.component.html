@@ -1,0 +1,41 @@
+<h1 mat-dialog-title>
+    {{ title }}
+</h1>
+
+<mat-dialog-content class="dialog-content">
+    <div class="form">
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input id="email" type="text" class="control" [(ngModel)]="user.email" [disabled]="isSaving">
+            <span class="error">{{ getError('email') }}</span>
+        </div>
+
+        <div class="form-group">
+            <label for="password">{{ passwordLabel }}</label>
+            <input id="password" type="text" class="control" [(ngModel)]="user.password" [disabled]="isSaving">
+            <span class="error">{{ getError('password') }}</span>
+        </div>
+
+        <div class="form-group">
+            <label for="role">Role</label>
+            <select id="role" class="control" [(ngModel)]="user.role" [disabled]="isSaving">
+                <option *ngFor="let role of roles" [value]="role" [selected]="user.role === role">
+                    {{ role }}
+                </option>
+            </select>
+            <span class="error">{{ getError('role') }}</span>
+        </div>
+
+        <div class="form-group mb-sm">
+            <input id="is_disabled" type="checkbox" class="checkbox" [(ngModel)]="user.is_disabled" [disabled]="isSaving">
+            <label class="checklabel" for="is_disabled">Disabled</label>
+        </div>
+
+    </div>
+</mat-dialog-content>
+
+<mat-dialog-actions class="dialog-actions">
+    <button class="button" (click)="save()">Save</button>
+    <button class="button" mat-dialog-close>Close</button>
+</mat-dialog-actions>

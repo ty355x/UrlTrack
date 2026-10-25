@@ -1,0 +1,45 @@
+<div class="toolbar">
+    <button (click)="back()" [disabled]="isLoading">
+        <mat-icon class="icon">arrow_back</mat-icon>
+        Back
+    </button>
+</div>
+
+<h1>Tracked URLs - Trash</h1>
+<app-loading [show]="isLoading && trackedUrls === null"></app-loading>
+
+<table *ngIf="trackedUrls !== null" class="data-table">
+    <tr>
+        <th style="width: 20%">Domain</th>
+        <th style="width: 30%">URL</th>
+        <th style="width: 10%">Images</th>
+        <th style="width: 10%">Update Time</th>
+        <th style="width: 10%">Last Updated</th>
+        <th style="width: 10%">Deleted</th>
+        <th style="width: 10%"></th>
+    </tr>
+    <tr *ngFor="let url of trackedUrls" [class.alt]="url.alt">
+        <td>{{ url.domain }}</td>
+        <td><a (click)="visitUrl(url)">{{ url.url }}</a></td>
+        <td>{{ url.images_count | number }}</td>
+        <td>{{ url.update_time_description }}</td>
+        <td>{{ url.last_updated_at | dateTime }}</td>
+        <td>{{ url.deleted_at | dateTime }}</td>
+        <td class="actions-menu">
+            <button class="button" (click)="viewImages(url)">
+                <mat-icon class="icon no-label">collections</mat-icon>
+            </button>
+            <app-menu-dropdown>
+                <li>
+                    <button (click)="restoreTrackedUrl(url)"><mat-icon class="icon">mode_edit</mat-icon>Restore</button>
+                </li>
+                <li>
+                    <button (click)="permDeleteTrackedUrl(url)"><mat-icon class="icon">delete</mat-icon>Delete</button>
+                </li>
+            </app-menu-dropdown>
+        </td>
+    </tr>
+    <tr *ngIf="trackedUrls.length === 0">
+        <td colspan="7">No tracked URLs found</td>
+    </tr>
+</table>

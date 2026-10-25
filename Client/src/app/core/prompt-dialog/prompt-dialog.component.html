@@ -1,0 +1,13 @@
+<h1>
+    {{ title }}
+</h1>
+
+<mat-dialog-content class="dialog-content">
+    <div *ngIf="!isMessageHtml">{{ message }}</div>
+    <div *ngIf="isMessageHtml" [innerHtml]="message"></div>
+</mat-dialog-content>
+
+<mat-dialog-actions class="dialog-actions">
+    <button (click)="ok()" class="button">OK</button>
+    <button mat-dialog-close class="button">Cancel</button>
+</mat-dialog-actions>

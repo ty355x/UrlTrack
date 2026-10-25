@@ -1,0 +1,9 @@
+.toolbar { margin: 0 0 20px 0; padding: 0; background-color: $bg-dark-color; }
+.toolbar .icon { position: relative; top: 3px; font-size: 16px; margin-right: 2px; }
+.toolbar button { margin: 0; padding: 8px 16px 5px 12px; border: none; color: #4e4e4e; font-size: 14px;
+    margin-right: 4px; background-color: transparent; }
+.toolbar button:hover { cursor: pointer; background-color: rgb(228, 228, 228);}
+.toolbar button[disabled] { color: rgb(197, 197, 197); }
+.toolbar button[disabled]:hover { background-color: transparent; border: none; cursor: default; }
+.toolbar button:active { background-color: rgb(219, 219, 219); }
+.toolbar button[disabled]:active { background-color: transparent; }

@@ -1,0 +1,8 @@
+<div class="menu-dropdown" (click)="menuButtonClick()">
+    <mat-icon class="dropdown-icon">more_vert</mat-icon>
+    <div *ngIf="showMenu || showMobile" class="menu-dropdown-list-wrapper">
+        <ul>
+            <ng-content></ng-content>
+        </ul>
+    <div>
+</div>

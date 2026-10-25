@@ -1,0 +1,69 @@
+/* Site Header */
+
+#site-header {
+    background-color: #1b4266; height: 48px; position: relative;
+}
+
+#site-header h1 {
+    font-size: 18px; color: #f9f9f9; font-weight: normal; user-select: none;
+}
+
+#site-header-buttons {
+    position: absolute; left: 100px; right: 0; height: 48px; text-align: right; padding-right: 16px;
+}
+
+.header-button {
+    display: inline-block; height: 48px;
+}
+
+.header-button a, .header-button span {
+    display: block; font-size: 14px; color: #f9f9f9; padding: 8px 12px 0 12px; height: 48px; box-sizing: border-box;
+    border-left: solid 1px #0b334e; user-select: none;
+}
+
+.header-button .icon {
+    font-size: 20px; position: relative; top: 6px; margin-right: 8px;
+}
+
+.header-button a {
+    color: #f9f9f9; text-decoration: none; size: 48px;
+}
+
+.header-button a:hover, header-button a:focus {
+    background-color: #d88018;
+}
+
+/* Content Wrapper */
+
+#content-wrapper {
+    margin: 12px 24px;
+}
+
+/* Site Nav */
+
+#site-nav {
+    margin: 0; padding: 0; height: 37px;
+}
+
+#site-nav a {
+    font-size: 15px; height: 27px; padding: 10px 16px 0 16px; text-decoration: none; color: #f7f7f7; text-decoration: none;
+    display: block; float: left; background-color: #d88018; border-right: solid 1px #e0930e;
+}
+
+#site-nav a:hover, #site-nav a:focus {
+    background-color: #d4a66e;
+}
+
+#site-nav a.active {
+    background-color: #fafafa; color: #585858; border-bottom: solid 1px #fafafa; border-right: solid 1px #fafafa;
+}
+
+#site-nav a.active:hover {
+    background-color: #fafafa;
+}
+
+/* Main */
+
+main {
+    margin: 0; padding: 24px; background-color: rgb(252, 252, 252); min-height: calc(100vh - 160px);
+}

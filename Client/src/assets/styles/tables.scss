@@ -1,0 +1,60 @@
+.data-table {
+    width: 100%; border-collapse: collapse; border: $border; background-color: $bg-light-color; font-size: 14px;
+}
+
+.data-table td, .data-table th {
+    border: none; border-bottom: $border; text-align: left;
+}
+
+.data-table th {
+    font-weight: bold; color: $header-color; padding: 12px 6px;
+}
+
+.data-table td {
+    padding: 6px;
+}
+
+.data-table .icon {
+    font-size: 16px; position: relative; top: 3px;
+}
+
+.data-table .actions-menu .menu-dropdown {
+    display: inline-block;
+}
+
+.data-table .actions-menu {
+    text-align: right;
+}
+
+.data-table tr.alt td {
+    background-color: rgb(248, 248, 248);
+}
+
+.data-table .button {
+    background-color: transparent; border: none; color: #228bc9; font-size: 14px !important; padding: 6px;
+    border-radius: 4px;
+}
+
+.data-table .button:hover {
+    border: none; background-color: rgb(243, 243, 243); cursor: pointer;
+}
+
+.data-table .button:active {
+    border: none; background-color: rgb(226, 226, 226);
+}
+
+.data-table .button:disabled {
+    color: rgb(156, 156, 156);
+}
+
+.data-table .button:disabled:hover, .data-table .button:disabled:active {
+    background: transparent; background-color: rgb(243, 243, 243);
+}
+
+.data-table .button .icon {
+    margin-right: 8px;
+}
+
+.data-table .button .icon.no-label {
+    margin-right: 0;
+}

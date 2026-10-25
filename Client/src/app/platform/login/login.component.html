@@ -1,0 +1,21 @@
+<div id="login-pane">
+
+    <h1>URLTrack Login</h1>
+
+    <form id="login" (submit)="login()">
+        <div class="input-box">
+            <mat-icon>email</mat-icon>
+            <input id="email" name="email" [(ngModel)]="credentials.email" [disabled]="isAttemptingLogin" type="text" placeholder="Email Address">
+        </div>
+
+        <div class="input-box">
+            <mat-icon>lock</mat-icon>
+            <input id="password" name="password" [(ngModel)]="credentials.password" [disabled]="isAttemptingLogin" type="password" placeholder="Password">
+        </div>
+
+        <div class="login-error">{{ error }}</div>
+
+        <button [disabled]="isAttemptingLogin" class="login-button" type="submit">Login</button>
+    </form>
+
+</div>

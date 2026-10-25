@@ -1,0 +1,19 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "build-test",
+			"group": "build",
+			"problemMatcher": [],
+			"label": "npm: build-test",
+			"detail": "ng build --configuration=test"
+        },
+        {
+            "type": "npm",
+            "script": "build",
+            "problemMatcher": [],
+            "label": "npm build (prod)"
+        },
+	]
+}

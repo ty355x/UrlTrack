@@ -1,0 +1,57 @@
+<div class="toolbar">
+    <button (click)="addTrackedUrl()" [disabled]="isLoading">
+        <mat-icon class="icon">add_box</mat-icon>
+        Add Tracked URL
+    </button>
+    <button (click)="viewTrash()" [disabled]="isLoading">
+        <mat-icon class="icon">delete</mat-icon>
+        Trash
+    </button>
+</div>
+
+<h1>Tracked URLs</h1>
+<app-loading [show]="isLoading && trackedUrls === null"></app-loading>
+
+<table *ngIf="trackedUrls !== null" class="data-table">
+    <tr>
+        <th style="width: 15%">Domain</th>
+        <th style="width: 25%">URL</th>
+        <th style="width: 10%">Images</th>
+        <th style="width: 10%">Update Time</th>
+        <th style="width: 10%">Last Updated</th>
+        <th style="width: 10%">Last Update Result</th>
+        <th style="width: 10%">Enabled</th>
+        <th style="width: 10%"></th>
+    </tr>
+    <tr *ngFor="let url of trackedUrls" [class.alt]="url.alt">
+        <td>{{ url.domain }}</td>
+        <td><a (click)="visitUrl(url)">{{ url.url }}</a></td>
+        <td>{{ url.images_count | number }}</td>
+        <td>{{ url.update_time_description }}</td>
+        <td>{{ url.last_updated_at | dateTime }}</td>
+        <td>
+            <span *ngIf="url.last_update_result === 'success'"><mat-icon class="icon success">check_circle</mat-icon>Success</span>
+            <span *ngIf="url.last_update_result === 'fail'"><mat-icon class="icon fail">cancel</mat-icon>Fail</span>
+        </td>
+        <td>
+            <span *ngIf="!url.is_disabled"><mat-icon class="icon success">check_circle</mat-icon>Enabled</span>
+            <span *ngIf="url.is_disabled"><mat-icon class="icon fail">cancel</mat-icon>Disabled</span>
+        </td>
+        <td class="actions-menu">
+            <button class="button" (click)="viewImages(url)">
+                <mat-icon class="icon no-label">collections</mat-icon>
+            </button>
+            <app-menu-dropdown>
+                <li>
+                    <button (click)="editTrackedUrl(url)"><mat-icon class="icon">mode_edit</mat-icon>Edit</button>
+                </li>
+                <li>
+                    <button (click)="trashTrackedUrl(url)"><mat-icon class="icon">delete</mat-icon>Trash</button>
+                </li>
+            </app-menu-dropdown>
+        </td>
+    </tr>
+    <tr *ngIf="trackedUrls.length === 0">
+        <td colspan="8">No tracked URLs found</td>
+    </tr>
+</table>

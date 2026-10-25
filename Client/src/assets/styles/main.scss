@@ -1,0 +1,24 @@
+html, body { padding: 0; margin: 0; height: 100%; }
+html { background-color: #3a6183; }
+body { font-size: 15px; font-family: 'Open Sans', arial, sans-serif; }
+
+h1 { font-weight: normal; font-size: 22px; margin: 24px 0; padding: 0; color: $header-color }
+
+.mt-0 { margin-top: 0; }
+.mr-5 { margin-right: 5px; }
+
+.button { outline: none; border: none; box-shadow: none; text-shadow: none; background-color: #2a80c2; color: #f7f7f7;
+	border-radius: 0; padding: 10px 32px; margin: 0 4px 2px 0; }
+.button:hover, .button:focus { background-color: #4293d1; color: #f7f7f7; text-shadow: none; cursor: pointer; border: none; }
+.button[disabled] { background-color: #a5a5a5; color: #dddddd; }
+.button[disabled]:hover { cursor: auto; }
+
+.clearfix { clear: both; }
+
+.status { font-weight: bold; }
+.success { color: $success-color; }
+.fail { color: $fail-color; }
+.neutral { color: rgb(68, 105, 175); }
+
+a { color: rgb(23, 125, 194); text-decoration: none; }
+a:hover, a:active { color: rgb(23, 125, 194); text-decoration: none; cursor: pointer; text-decoration: underline; }

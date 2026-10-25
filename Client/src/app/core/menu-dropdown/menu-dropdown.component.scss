@@ -1,0 +1,58 @@
+.menu-dropdown {
+    position: relative; background-color: transparent; color: rgb(97, 97, 97); font-size: 14px;
+    text-align: center; display: block; width: 28px; padding: 4px; border-radius: 4px; user-select: none;
+}
+
+.menu-dropdown:hover {
+    background-color: rgb(243, 243, 243); cursor: pointer;
+}
+
+.menu-dropdown .dropdown-icon {
+    position: relative; top: 4px; font-size: 16px;
+}
+
+.menu-dropdown-list-wrapper {
+    position: absolute; top: 28px; right: 0; border: solid 1px rgb(190, 190, 190); min-width: 200px; z-index: 100;
+}
+
+.menu-dropdown ul {
+    list-style: none; margin: 0; padding: 10px 0; text-align: left; background-color: white; height: auto;
+}
+
+.menu-dropdown li {
+    padding: 0; margin: 0;
+}
+
+.menu-dropdown li button {
+    padding: 10px 10px; font-size: 14px; display: block; border: none; background-color: transparent; text-align: left; width: 100%;
+}
+
+.menu-dropdown li button:disabled {
+    color: rgb(189, 189, 189);
+}
+
+.menu-dropdown li button:hover {
+    background-color: rgb(241, 241, 241); cursor: pointer;
+}
+
+.menu-dropdown li button:disabled:hover {
+    background-color: transparent;
+}
+
+.menu-dropdown li button .icon {
+    margin-right: 4px; font-size: 17px; position: relative; top: 3px;
+}
+
+@media (max-width: 800px) {
+    .menu-dropdown { margin: 0 auto; position: static; display: block; background-color: transparent; border-radius: 0; width: auto; }
+    .menu-dropdown:hover { background: transparent; cursor: default; }
+    .menu-dropdown > i.fa { display: none; }
+    .menu-dropdown-list-wrapper { display: block; position: static; border: none; margin: 0; padding: 0; min-width: 0; }
+    .menu-dropdown ul { text-align: center; }
+    .menu-dropdown li { display: inline; width: auto; padding-right: 6px; }
+    .menu-dropdown li button { display: inline; width: auto; background-color: transparent; border: none; color: #228bc9; font-size: 14px;
+        padding: 6px; border-radius: 4px; }
+    .menu-dropdown li button:hover { background-color: transparent; border: none; background-color: rgb(243, 243, 243); }
+    .menu-dropdown li button:active { background-color: transparent; border: none; background-color: rgb(226, 226, 226); }
+    .menu-dropdown li button .fa { margin-right: 12px; }
+}

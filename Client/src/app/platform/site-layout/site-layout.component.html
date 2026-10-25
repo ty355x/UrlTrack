@@ -1,0 +1,31 @@
+<mat-toolbar id="site-header">
+    <h1>URLTrack</h1>
+    <div id="site-header-buttons">
+        <div class="header-button">
+            <span>
+                <mat-icon class="icon">account_box</mat-icon>
+                {{ user.email }}
+            </span>
+        </div>
+        <div class="header-button">
+            <a (click)="logout()" href="#">
+                <mat-icon class="icon">logout</mat-icon>
+                Logout
+            </a>
+        </div>
+    </div>
+</mat-toolbar>
+
+<div id="content-wrapper">
+
+    <nav id="site-nav">
+        <a [routerLink]="['/app/tracked-urls']" [class.active]="activeTab === 'app-tracked-urls'">Tracked URLs</a>
+        <a *ngIf="isAdmin" [routerLink]="['/app/users']" [class.active]="activeTab === 'admin-users'">Users</a>
+        <a *ngIf="isAdmin" [routerLink]="['/app/logs']" [class.active]="activeTab === 'admin-logs'">Logs</a>
+    </nav>
+
+    <main>
+        <router-outlet></router-outlet>
+    </main>
+
+</div>
